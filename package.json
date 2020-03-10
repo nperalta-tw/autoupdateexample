@@ -1,6 +1,6 @@
 {
   "name": "auto-update-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "auto-update test",
   "main": "main.js",
   "scripts": {
@@ -8,9 +8,6 @@
     "start": "electron .",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always"
-  },
-  "build": {
-    "appId": "com.TelWare.AutoUpdateExample"
   },
   "author": "",
   "license": "ISC",
