@@ -9,7 +9,7 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, "preload.js")
+      // preload: path.join(__dirname, "preload.js")
     },
     
   });
@@ -19,6 +19,7 @@ function createWindow () {
   });
   mainWindow.webContents.openDevTools();
   mainWindow.once('ready-to-show', () => {
+    console.log("ready to show");
     autoUpdater.checkForUpdatesAndNotify();
   });
   app.setAppUserModelId("com.TelWare.AutoUpdateExample")
