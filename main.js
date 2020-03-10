@@ -21,6 +21,7 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     autoUpdater.checkForUpdatesAndNotify();
   });
+  app.setAppUserModelId("com.TelWare.AutoUpdateExample")
 }
 
 app.on('ready', () => {
