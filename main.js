@@ -18,10 +18,17 @@ function createWindow () {
     mainWindow = null;
   });
   mainWindow.webContents.openDevTools();
-  mainWindow.once('ready-to-show', () => {
-    console.log("ready to show");
+
+  mainWindow.webContents.once('dom-ready', () => {
+    mainWindow.webContents.send('readyShow');
     autoUpdater.checkForUpdatesAndNotify();
   });
+
+  // mainWindow.once('ready-to-show', () => {
+  //   mainWindow.webContents.send('readyShow');
+  //   autoUpdater.checkForUpdatesAndNotify();
+  // });
+
   app.setAppUserModelId("com.TelWare.AutoUpdateExample")
 }
 
